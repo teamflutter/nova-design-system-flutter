@@ -1,111 +1,124 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'ResponsiveUtil.dart';
+import 'ThemeUtils.dart';
 
 class AppTypography {
   static const String fontFamily = "DM-Sans";
 
-  // UI Typography Group
-  static TypographyGroup uiStyle = TypographyGroup(
-    xs3: TextStyle(
-        fontSize: 9.sp,
-        fontWeight: FontWeight.w400,
-        height: 16.w,
-        fontFamily: fontFamily),
-    xs2: TextStyle(
-        fontSize: 10.sp,
-        fontWeight: FontWeight.w400,
-        height: 16.w,
-        fontFamily: fontFamily),
-    xs: TextStyle(
-        fontSize: 12.sp,
-        fontWeight: FontWeight.w400,
-        height: 16.w,
-        fontFamily: fontFamily),
-    sm: TextStyle(
-        fontSize: 14.sp,
-        fontWeight: FontWeight.w400,
-        height: 24.w,
-        fontFamily: fontFamily),
-    md: TextStyle(
-        fontSize: 16.sp,
-        fontWeight: FontWeight.w400,
-        height: 24.w,
-        fontFamily: fontFamily),
-    lg: TextStyle(
-        fontSize: 18.sp,
-        fontWeight: FontWeight.w400,
-        height: 28.w,
-        fontFamily: fontFamily),
-    xl: TextStyle(
-        fontSize: 20.sp,
-        fontWeight: FontWeight.w400,
-        height: 32.w,
-        fontFamily: fontFamily),
-    xl2: TextStyle(
-        fontSize: 24.sp,
-        fontWeight: FontWeight.w400,
-        height: 32.w,
-        fontFamily: fontFamily),
-    xl3: TextStyle(
-        fontSize: 32.sp,
-        fontWeight: FontWeight.w400,
-        height: 40.w,
-        fontFamily: fontFamily),
-    xl4: TextStyle(
-        fontSize: 40.sp,
-        fontWeight: FontWeight.w400,
-        height: 48.w,
-        fontFamily: fontFamily),
-    xl5: TextStyle(
-        fontSize: 48.sp,
-        fontWeight: FontWeight.w400,
-        height: 56.w,
-        fontFamily: fontFamily),
-    xl6: TextStyle(
-        fontSize: 56.sp,
-        fontWeight: FontWeight.w400,
-        height: 64.w,
-        fontFamily: fontFamily),
-    xl7: TextStyle(
-        fontSize: 64.sp,
-        fontWeight: FontWeight.w400,
-        height: 72.w,
-        fontFamily: fontFamily),
-    xl8: TextStyle(
-        fontSize: 72.sp,
-        fontWeight: FontWeight.w400,
-        height: 76.w,
-        fontFamily: fontFamily),
-  );
+  static TypographyGroup uiStyle(BuildContext context) {
+    final palette = ThemeUtils.getPalette(context);
+
+    return TypographyGroup(
+      xs3: TextStyle(
+          fontSize: ResponsiveUtils.fontSize(9),
+          fontWeight: FontWeight.w400,
+          fontFamily: fontFamily,
+          color: palette.midnightBlack),
+      xs2: TextStyle(
+          fontSize: ResponsiveUtils.fontSize(10),
+          fontWeight: FontWeight.w400,
+          fontFamily: fontFamily,
+          color: palette.midnightBlack),
+      xs: TextStyle(
+          fontSize: ResponsiveUtils.fontSize(12),
+          fontWeight: FontWeight.w400,
+          fontFamily: fontFamily,
+          color: palette.midnightBlack),
+      sm: TextStyle(
+          fontSize: ResponsiveUtils.fontSize(14),
+          fontWeight: FontWeight.w400,
+          fontFamily: fontFamily,
+          color: palette.midnightBlack),
+      md: TextStyle(
+          fontSize: ResponsiveUtils.fontSize(16),
+          fontWeight: FontWeight.w400,
+          fontFamily: fontFamily,
+          color: palette.midnightBlack),
+      lg: TextStyle(
+          fontSize: ResponsiveUtils.fontSize(18),
+          fontWeight: FontWeight.w400,
+          fontFamily: fontFamily,
+          color: palette.midnightBlack),
+      xl: TextStyle(
+          fontSize: ResponsiveUtils.fontSize(20),
+          fontWeight: FontWeight.w400,
+          fontFamily: fontFamily,
+          color: palette.midnightBlack),
+      xl2: TextStyle(
+          fontSize: ResponsiveUtils.fontSize(24),
+          fontWeight: FontWeight.w400,
+          fontFamily: fontFamily,
+          color: palette.midnightBlack),
+      xl3: TextStyle(
+          fontSize: ResponsiveUtils.fontSize(32),
+          fontWeight: FontWeight.w400,
+          fontFamily: fontFamily,
+          color: palette.midnightBlack),
+      xl4: TextStyle(
+          fontSize: ResponsiveUtils.fontSize(40),
+          fontWeight: FontWeight.w400,
+          fontFamily: fontFamily,
+          color: palette.midnightBlack),
+      xl5: TextStyle(
+          fontSize: ResponsiveUtils.fontSize(48),
+          fontWeight: FontWeight.w400,
+          fontFamily: fontFamily,
+          color: palette.midnightBlack),
+      xl6: TextStyle(
+          fontSize: ResponsiveUtils.fontSize(56),
+          fontWeight: FontWeight.w400,
+          fontFamily: fontFamily,
+          color: palette.midnightBlack),
+      xl7: TextStyle(
+          fontSize: ResponsiveUtils.fontSize(64),
+          fontWeight: FontWeight.w400,
+          fontFamily: fontFamily,
+          color: palette.midnightBlack),
+      xl8: TextStyle(
+          fontSize: ResponsiveUtils.fontSize(72),
+          fontWeight: FontWeight.w400,
+          fontFamily: fontFamily,
+          color: palette.midnightBlack),
+    );
+  }
 
   // Paragraph Typography Group
-  static ParagraphTypographyGroup paragraphStyle = ParagraphTypographyGroup(
-    xs: TextStyle(
-        fontSize: 12.sp,
-        fontWeight: FontWeight.w400,
-        height: 16.w,
-        fontFamily: fontFamily),
-    sm: TextStyle(
-        fontSize: 14.sp,
-        fontWeight: FontWeight.w400,
-        height: 20.w,
-        fontFamily: fontFamily),
-    md: TextStyle(
-        fontSize: 16.sp,
-        fontWeight: FontWeight.w400,
-        height: 24.w,
-        fontFamily: fontFamily),
-    lg: TextStyle(
-        fontSize: 18.sp,
-        fontWeight: FontWeight.w400,
-        height: 28.w,
-        fontFamily: fontFamily),
-    xl: TextStyle(
-        fontSize: 20.sp,
-        fontWeight: FontWeight.w400,
-        height: 28.w,
-        fontFamily: fontFamily),
-  );
+  static ParagraphTypographyGroup paragraphStyle(BuildContext context) {
+    final palette = ThemeUtils.getPalette(context);
+
+    return ParagraphTypographyGroup(
+      xs: TextStyle(
+          fontSize: ResponsiveUtils.fontSize(12),
+          fontWeight: FontWeight.w400,
+          fontFamily: fontFamily,
+          color: palette.charcoal),
+      // Dynamic color
+      sm: TextStyle(
+          fontSize: ResponsiveUtils.fontSize(14),
+          fontWeight: FontWeight.w400,
+          fontFamily: fontFamily,
+          color: palette.charcoal),
+      // Dynamic color
+      md: TextStyle(
+          fontSize: ResponsiveUtils.fontSize(16),
+          fontWeight: FontWeight.w400,
+          fontFamily: fontFamily,
+          color: palette.charcoal),
+      // Dynamic color
+      lg: TextStyle(
+          fontSize: ResponsiveUtils.fontSize(18),
+          fontWeight: FontWeight.w400,
+          fontFamily: fontFamily,
+          color: palette.charcoal),
+      // Dynamic color
+      xl: TextStyle(
+          fontSize: ResponsiveUtils.fontSize(20),
+          fontWeight: FontWeight.w400,
+          fontFamily: fontFamily,
+          color: palette.charcoal), // Dynamic color
+    );
+  }
 }
 
 // Typography Group Class

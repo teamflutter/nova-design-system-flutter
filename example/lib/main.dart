@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
-import 'package:nova_design_system_flutter/nova_design_system_flutter.dart';
+import 'package:nova_design_system_flutter/theme/ResponsiveWrapper.dart';
+import 'package:nova_design_system_flutter_example/samples/AvatarSamples.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ResponsiveWrapper( child: MyApp()));
 }
 
 class MyApp extends StatefulWidget {
@@ -16,22 +14,38 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
-
   @override
   void initState() {
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-      ),
+          appBar: AppBar(
+            title: const Text('Plugin example app'),
+          ),
+          body: Builder(
+            builder: (BuildContext context) {
+              return SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    FilledButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const AvatarSamples()));
+                        },
+                        child: const Text("Avatar"))
+                  ],
+                ),
+              );
+            },
+          )),
     );
   }
 }
