@@ -3,6 +3,7 @@ import 'package:nova_design_system_flutter/theme/ResponsiveWrapper.dart';
 import 'package:nova_design_system_flutter_example/samples/AccordionSamples.dart';
 import 'package:nova_design_system_flutter_example/samples/AvatarSamples.dart';
 import 'package:nova_design_system_flutter_example/samples/RadiobuttonSample.dart';
+import 'package:nova_design_system_flutter_example/samples/SegmentedControlSample.dart';
 
 void main() {
   runApp(const ResponsiveWrapper(child: MyApp()));
@@ -63,6 +64,17 @@ class _MyAppState extends State<MyApp> {
                                   builder: (context) => const RadioSamples()));
                         },
                         child: const Text("Radio")),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    FilledButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const SegmentedControlSamples()));
+                        },
+                        child: const Text("Segmented Control")),
                     SizedBox(
                       height: 8,
                     ),

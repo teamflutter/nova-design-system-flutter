@@ -38,7 +38,7 @@ class LightColors {
   static const electricBlue = Color(0xFF0A72F9);
   static const mist = Color(0x0A000000);
   static const stone = Color(0xFFE2E2E2);
-  static const lightGray = Color(0xFFF5F5F5);
+  static const lightGray = Color(0xFFF8F8F8);
   static const pureWhite = Color(0xFFFFFFFF);
   static const charcoal = Color(0x8F000000);
   static const midnightBlack = Color(0xFF0B0B0B);
