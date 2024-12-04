@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nova_design_system_flutter/theme/ResponsiveWrapper.dart';
+import 'package:nova_design_system_flutter_example/samples/AccordionSamples.dart';
 import 'package:nova_design_system_flutter_example/samples/AvatarSamples.dart';
 
 void main() {
@@ -29,8 +30,8 @@ class _MyAppState extends State<MyApp> {
           body: Builder(
             builder: (BuildContext context) {
               return SingleChildScrollView(
+                padding: EdgeInsets.all(16),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     FilledButton(
@@ -40,7 +41,16 @@ class _MyAppState extends State<MyApp> {
                               MaterialPageRoute(
                                   builder: (context) => const AvatarSamples()));
                         },
-                        child: const Text("Avatar"))
+                        child: const Text("Avatar")),
+                    SizedBox(height: 8,),
+                    FilledButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const AccordionSamples()));
+                        },
+                        child: const Text("Accordion"))
                   ],
                 ),
               );
