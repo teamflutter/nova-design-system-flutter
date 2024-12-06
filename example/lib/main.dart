@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nova_design_system_flutter/theme/ResponsiveWrapper.dart';
 import 'package:nova_design_system_flutter_example/samples/AccordionSamples.dart';
+import 'package:nova_design_system_flutter_example/samples/AuthCodeSample.dart';
 import 'package:nova_design_system_flutter_example/samples/AvatarSamples.dart';
 import 'package:nova_design_system_flutter_example/samples/RadiobuttonSample.dart';
 import 'package:nova_design_system_flutter_example/samples/SegmentedControlSample.dart';
@@ -75,6 +76,17 @@ class _MyAppState extends State<MyApp> {
                                   builder: (context) => const SegmentedControlSamples()));
                         },
                         child: const Text("Segmented Control")),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    FilledButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>  AuthCodeExample()));
+                        },
+                        child: const Text("Authcode")),
                     SizedBox(
                       height: 8,
                     ),

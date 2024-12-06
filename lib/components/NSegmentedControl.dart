@@ -40,7 +40,7 @@ import '../theme/ThemeUtils.dart';
 /// Notes:
 /// - The widget automatically adapts to the size (either small or medium) based on the `size` parameter.
 /// - Text and icon cannot be used simultaneously for a single item. You need to provide one or the other.
-/// - This widget uses a `TabController` to manage the selection state and animation of the indicator.
+/// - This widget uses a `TabController` to manage the selection state an3d animation of the indicator.
 
 class SegmentedControlItem {
   final String? text;
