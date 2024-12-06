@@ -37,50 +37,56 @@ class NMenuItem extends StatelessWidget {
     final textColor =
         disabled ? colorPalette.midnightBlack : colorPalette.midnightBlack;
 
-    return GestureDetector(
-      onTap: disabled ? null : onTap,
-      child: Container(
-        padding: EdgeInsets.symmetric(
-            horizontal: ResponsiveUtils.width(16),
-            vertical: ResponsiveUtils.height(8)),
-        decoration: BoxDecoration(
-          color: disabled
-              ? colorPalette.pureWhite.withOpacity(0.1)
-              : backgroundColor,
-          borderRadius: BorderRadius.circular(ResponsiveUtils.radius(8)),
-          boxShadow: selected
-              ? [
-                  BoxShadow(
-                    color: const Color(0x334E46B4),
-                    // #4E46B433 in ARGB format (33 is 20% opacity)
-                    offset: const Offset(0, 0),
-                    // x-offset and y-offset are 0
-                    blurRadius: 0,
-                    // No blur
-                    spreadRadius: ResponsiveUtils.radius(
-                        4), // Equivalent to the spread radius
-                  )
-                ]
-              : null, // No shadow when not selected
-        ),
-        child: Row(
-          children: [
-            if (leading != null) ...[
-              SizedBox(width: iconSize, height: iconSize, child: leading),
-              SizedBox(width: ResponsiveUtils.width(8)),
-            ],
-            Expanded(
-              child: Text(
-                label,
-                maxLines: multiline ? 2 : 1,
-                style: typography.md.copyWith(
-                  color: textColor,
+    return Material(
+      borderRadius: BorderRadius.circular(ResponsiveUtils.radius(8)),
+      color: disabled
+          ? colorPalette.pureWhite.withOpacity(0.1)
+          : backgroundColor, // Ensures the InkWell shows correctly
+      child: InkWell(
+        onTap: disabled ? null : onTap,
+        splashColor: disabled ? Colors.transparent : colorPalette.lightGray,
+        borderRadius: BorderRadius.circular(8.0),
+        child: Container(
+          padding: EdgeInsets.symmetric(
+              horizontal: ResponsiveUtils.width(16),
+              vertical: ResponsiveUtils.height(8)),
+          decoration: BoxDecoration(
+            color: selected ?backgroundColor : null ,
+            borderRadius: BorderRadius.circular(ResponsiveUtils.radius(8)),
+            boxShadow: selected
+                ? [
+                    BoxShadow(
+                      color: const Color(0x334E46B4),
+                      // #4E46B433 in ARGB format (33 is 20% opacity)
+                      offset: const Offset(0, 0),
+                      // x-offset and y-offset are 0
+                      blurRadius: 0,
+                      // No blur
+                      spreadRadius: ResponsiveUtils.radius(
+                          4), // Equivalent to the spread radius
+                    )
+                  ]
+                : null, // No shadow when not selected
+          ),
+          child: Row(
+            children: [
+              if (leading != null) ...[
+                SizedBox(width: iconSize, height: iconSize, child: leading),
+                SizedBox(width: ResponsiveUtils.width(8)),
+              ],
+              Expanded(
+                child: Text(
+                  label,
+                  maxLines: multiline ? 2 : 1,
+                  style: typography.md.copyWith(
+                    color: textColor,
+                  ),
                 ),
               ),
-            ),
-            if (trailing != null)
-              SizedBox(width: iconSize, height: iconSize, child: trailing),
-          ],
+              if (trailing != null)
+                SizedBox(width: iconSize, height: iconSize, child: trailing),
+            ],
+          ),
         ),
       ),
     );
